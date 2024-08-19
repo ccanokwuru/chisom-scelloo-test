@@ -1,0 +1,474 @@
+[
+    {
+        "userId": "user001",
+        "userInfo": {
+            "name": {
+                "first": "John",
+                "last": "Doe"
+            },
+            "email": "john.doe@example.com",
+            "status": "active",
+            "username": "johndoe"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-01T10:30:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "purchase",
+                "timestamp": "2023-05-01T11:15:00Z",
+                "description": "User made a purchase"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item001",
+                "name": "Smartphone",
+                "quantity": 5,
+                "price": 599.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            },
+            {
+                "itemId": "item002",
+                "name": "Laptop",
+                "quantity": 3,
+                "price": 1299.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-01T11:15:00Z"
+    },
+    {
+        "userId": "user002",
+        "userInfo": {
+            "name": {
+                "first": "Jane",
+                "middle": null,
+                "last": "Smith"
+            },
+            "email": "jane.smith@example.com",
+            "status": "inactive",
+            "username": "janesmith"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-04-28T14:45:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "view_item",
+                "timestamp": "2023-04-28T15:00:00Z",
+                "description": "User viewed an item"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item003",
+                "name": "Wireless Headphones",
+                "quantity": 2,
+                "price": 199.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "overdue",
+                "dueDate": "2023-04-30T23:59:59Z"
+            }
+        ],
+        "lastSeen": "2023-04-28T15:00:00Z"
+    },
+    {
+        "userId": "user003",
+        "userInfo": {
+            "name": {
+                "first": "Alice",
+                "middle": "Marie",
+                "last": "Johnson"
+            },
+            "email": "alice.johnson@example.com",
+            "status": "active",
+            "username": "alicejohnson"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-02T09:00:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "purchase",
+                "timestamp": "2023-05-02T09:30:00Z",
+                "description": "User made a purchase"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item004",
+                "name": "Smart Watch",
+                "quantity": 1,
+                "price": 299.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            },
+            {
+                "itemId": "item005",
+                "name": "Tablet",
+                "quantity": 2,
+                "price": 499.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-02T09:30:00Z"
+    },
+    {
+        "userId": "user004",
+        "userInfo": {
+            "name": {
+                "first": "Bob",
+                "last": "Wilson"
+            },
+            "email": "bob.wilson@example.com",
+            "status": "active",
+            "username": "bobwilson"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-03T11:00:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "view_item",
+                "timestamp": "2023-05-03T11:15:00Z",
+                "description": "User viewed an item"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item006",
+                "name": "Bluetooth Speaker",
+                "quantity": 3,
+                "price": 79.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-03T11:15:00Z"
+    },
+    {
+        "userId": "user005",
+        "userInfo": {
+            "name": {
+                "first": "Emma",
+                "middle": null,
+                "last": "Brown"
+            },
+            "email": "emma.brown@example.com",
+            "status": "active",
+            "username": "emmabrown"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-04T13:30:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "purchase",
+                "timestamp": "2023-05-04T14:00:00Z",
+                "description": "User made a purchase"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item007",
+                "name": "Digital Camera",
+                "quantity": 1,
+                "price": 449.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-04T14:00:00Z"
+    },
+    {
+        "userId": "user006",
+        "userInfo": {
+            "name": {
+                "first": "Michael",
+                "middle": "James",
+                "last": "Lee"
+            },
+            "email": "michael.lee@example.com",
+            "status": "inactive",
+            "username": "michaellee"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-05T10:00:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "view_item",
+                "timestamp": "2023-05-05T10:15:00Z",
+                "description": "User viewed an item"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item008",
+                "name": "Gaming Console",
+                "quantity": 1,
+                "price": 399.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "unpaid",
+                "dueDate": "2023-05-20T23:59:59Z"
+            }
+        ],
+        "lastSeen": "2023-05-05T10:15:00Z"
+    },
+    {
+        "userId": "user007",
+        "userInfo": {
+            "name": {
+                "first": "Olivia",
+                "last": "Davis"
+            },
+            "email": "olivia.davis@example.com",
+            "status": "active",
+            "username": "oliviadavis"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-06T09:45:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "purchase",
+                "timestamp": "2023-05-06T10:30:00Z",
+                "description": "User made a purchase"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item009",
+                "name": "Fitness Tracker",
+                "quantity": 2,
+                "price": 99.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-06T10:30:00Z"
+    },
+    {
+        "userId": "user008",
+        "userInfo": {
+            "name": {
+                "first": "William",
+                "middle": null,
+                "last": "Taylor"
+            },
+            "email": "william.taylor@example.com",
+            "status": "active",
+            "username": "williamtaylor"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-07T14:00:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "view_item",
+                "timestamp": "2023-05-07T14:30:00Z",
+                "description": "User viewed an item"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item010",
+                "name": "Wireless Earbuds",
+                "quantity": 1,
+                "price": 129.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-07T14:30:00Z"
+    },
+    {
+        "userId": "user009",
+        "userInfo": {
+            "name": {
+                "first": "Sophia",
+                "middle": "Grace",
+                "last": "Anderson"
+            },
+            "email": "sophia.anderson@example.com",
+            "status": "active",
+            "username": "sophiaanderson"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-08T11:15:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "purchase",
+                "timestamp": "2023-05-08T11:45:00Z",
+                "description": "User made a purchase"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item011",
+                "name": "Smart Home Hub",
+                "quantity": 1,
+                "price": 149.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "unpaid",
+                "dueDate": "2023-05-23T23:59:59Z"
+            }
+        ],
+        "lastSeen": "2023-05-08T11:45:00Z"
+    },
+    {
+        "userId": "user010",
+        "userInfo": {
+            "name": {
+                "first": "James",
+                "last": "Wilson"
+            },
+            "email": "james.wilson@example.com",
+            "status": "inactive",
+            "username": "jameswilson"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-09T16:00:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "view_item",
+                "timestamp": "2023-05-09T16:15:00Z",
+                "description": "User viewed an item"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item012",
+                "name": "Portable Charger",
+                "quantity": 3,
+                "price": 39.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-09T16:15:00Z"
+    },
+    {
+        "userId": "user011",
+        "userInfo": {
+            "name": {
+                "first": "Emily",
+                "middle": null,
+                "last": "Clark"
+            },
+            "email": "emily.clark@example.com",
+            "status": "active",
+            "username": "emilyclark"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-10T10:30:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "purchase",
+                "timestamp": "2023-05-10T11:00:00Z",
+                "description": "User made a purchase"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item013",
+                "name": "Smart Thermostat",
+                "quantity": 1,
+                "price": 199.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-10T11:00:00Z"
+    },
+    {
+        "userId": "user012",
+        "userInfo": {
+            "name": {
+                "first": "Daniel",
+                "middle": "Joseph",
+                "last": "Martinez"
+            },
+            "email": "daniel.martinez@example.com",
+            "status": "active",
+            "username": "danielmartinez"
+        },
+        "activities": [
+            {
+                "type": "login",
+                "timestamp": "2023-05-11T13:45:00Z",
+                "description": "User logged into the system"
+            },
+            {
+                "type": "view_item",
+                "timestamp": "2023-05-11T14:00:00Z",
+                "description": "User viewed an item"
+            }
+        ],
+        "inventory": [
+            {
+                "itemId": "item014",
+                "name": "Wireless Mouse",
+                "quantity": 2,
+                "price": 29.99,
+                "currencySymbol": "$",
+                "currencyIsoCode": "USD",
+                "paymentStatus": "paid",
+                "dueDate": null
+            }
+        ],
+        "lastSeen": "2023-05-11T14:00:00Z"
+    }
+]
