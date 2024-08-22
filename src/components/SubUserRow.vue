@@ -30,8 +30,8 @@ const props = defineProps<{ activities: UserActivity[] }>()
         <div>{{ description }}</div>
       </div>
 
-      <div class="data">
-        <div class="col-span-3 p-5 uppercase">No Record Found</div>
+      <div class="data" v-if="!activities.length">
+        <div class="col-span-3 p-5 uppercase text-center">No Record Found</div>
       </div>
     </div>
   </div>
