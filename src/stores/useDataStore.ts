@@ -11,6 +11,7 @@ export const useUserDataStore = defineStore('data', () => {
     payment?: UserInventory['paymentStatus'] | 'all'
     status?: User['userInfo']['status'] | 'all'
   }>({})
+
   const filterUsers = (status?: UserInventory['paymentStatus'] | 'all') => {
     filter.value.payment = status
     users.value =
@@ -20,6 +21,7 @@ export const useUserDataStore = defineStore('data', () => {
           )
         : (all_users.value as User[])
   }
+
   const filterUsersByStatus = (status?: User['userInfo']['status'] | 'all') => {
     filter.value.status = status
     users.value =
@@ -117,7 +119,7 @@ export const useUserDataStore = defineStore('data', () => {
     users.value.find(({ userId }) => userId === id.toString()) as User | undefined
 
   const makePaid = (id: string | number) => {
-    users.value = users.value.map((user) => {
+    all_users.value = all_users.value.map((user) => {
       const { inventory, userId } = user
       if (id !== userId) return user
       return {
@@ -125,6 +127,7 @@ export const useUserDataStore = defineStore('data', () => {
         inventory: inventory.map((e) => ({ ...e, paymentStatus: 'paid' }))
       }
     })
+    filterUsers(filter.value.payment)
   }
 
   const deleteUser = (id: string) => {

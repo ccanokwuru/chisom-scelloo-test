@@ -24,7 +24,8 @@ const page = computed(() => route.value.query?.page?.toString())
 const table = ref<HTMLDivElement>()
 
 const active_tab = ref<string | undefined>(tab.value ?? tabs[0].name)
-const active_page = ref<string | number | undefined>(page.value ?? 1)
+const current_page = ref(Number(page.value ?? 1))
+const row_count = ref(10)
 const {
   filterUsers,
   filterUsersByStatus,
@@ -43,12 +44,13 @@ const all_users_selected = ref(false)
 const changeTab = (t?: string) => {
   const f = t as UserInventory['paymentStatus'] | 'all' | undefined
   active_tab.value = f
-  router.push({ ...route.value, query: { ...route.value.query, tab: t } })
+  router.push({ ...route.value, query: { ...route.value.query, tab: t, page: undefined } })
+  current_page.value = 1
   filterUsers(f)
   reset()
 }
-const changepage = (p?: string | number) => {
-  active_page.value = p
+const changePage = (p?: number) => {
+  current_page.value = p ?? 1
   router.push({ ...route.value, query: { ...route.value.query, page: p } })
   reset()
 }
@@ -165,6 +167,7 @@ watch(search, (current, old) => {
         />
         <UserRow
           v-for="(user, idx) in users"
+          v-show="idx + 1 <= row_count * current_page && idx + 1 > row_count * (current_page - 1)"
           :key="user.userId"
           :selected="selected_users.includes(user.userId)"
           @select="selectUser"
@@ -173,7 +176,13 @@ watch(search, (current, old) => {
         />
       </div>
       <div class="p-3 bg-neutral">
-        <Pagination :totalIitems="127" />
+        <Pagination
+          :totalIitems="users.length"
+          :current-page="Number(current_page)"
+          :per-page="row_count"
+          @change-page="changePage"
+          @change-count="(e) => (row_count = e)"
+        />
       </div>
     </main>
     <footer></footer>

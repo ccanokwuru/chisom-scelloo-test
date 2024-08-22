@@ -45,8 +45,28 @@ const lastPage = props.currentPage * props.perPage >= props.totalIitems
       </div>
     </UiDropdown>
 
-    {{ (currentPage - 1) * perPage + 1 }} - {{ !lastPage ? currentPage * perPage : totalIitems }} of
-    {{ totalIitems }}
+    <div>
+      {{ (currentPage - 1) * perPage + 1 }} -
+      {{ !lastPage ? currentPage * perPage : totalIitems }} of
+      {{ totalIitems }}
+    </div>
+
+    <div class="flex gap-5 items center justify">
+      <button
+        type="button"
+        class="p-1 rounded ouline none border-none"
+        @click="emits('changePage', currentPage > 1 ? currentPage - 1 : 1)"
+      >
+        &lang;
+      </button>
+      <button
+        type="button"
+        class="p-1 rounded ouline none border-none"
+        @click="emits('changePage', !lastPage ? currentPage + 1 : currentPage)"
+      >
+        &rang;
+      </button>
+    </div>
   </div>
 </template>
 

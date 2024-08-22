@@ -29,6 +29,10 @@ const props = defineProps<{ activities: UserActivity[] }>()
         <div>{{ type }}</div>
         <div>{{ description }}</div>
       </div>
+
+      <div class="data">
+        <div class="col-span-3 p-5 uppercase">No Record Found</div>
+      </div>
     </div>
   </div>
 </template>
