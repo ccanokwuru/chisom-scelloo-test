@@ -1,104 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --neutral: #f2f0f9;
-  --primary: #6d5bd0;
-  --primary-dark: #25213b;
-  --primary-light: #6e6893;
-  --primary-light-2: #8b83ba;
-  --info: #4a4aff;
-  --info-neutral: #e6e6f2;
-  --positive: #007f00;
-  --positive-neutral: #cdffcd;
-  --negative: #d30000;
-  --negative-neutral: #ffe0e0;
-  --warning: #965e00;
-  --warning-1: #ce8500;
-  --warning-neutral: #ffeccc;
 }
 
 * {
+  @apply text-primary-light;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--primary-light);
+  /* color: var(--primary-light); */
+
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
-  background-color: var(--neutral);
+  @apply min-h-[100dvh] bg-neutral;
 }
 
 .tab,
 .badge,
 .input,
 .btn {
-  --_padding: 0.75rem;
-  --_gap: var(--_gap);
-  --_corner: 0.25rem;
-
-  text-decoration: none;
-  border: none;
-
-  position: relative;
-
-  display: flex;
-  justify-content: var(--_justify, center);
-  align-items: var(--_items, center);
-
-  gap: var(--_gap);
-
-  background-color: var(--_background, transparent);
-  padding: var(--_padding);
-
-  transition: 0.5s ease-in-out;
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -ms-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
+  @apply border-none relative decoration-[none] flex transition-all duration-500;
 }
 
 .btn {
-  --_background: var(--primary);
-  --_padding: 0.75rem;
-
-  border-radius: var(--_corner);
-  -webkit-border-radius: var(--_corner);
-  -moz-border-radius: var(--_corner);
-  -ms-border-radius: var(--_corner);
-  -o-border-radius: var(--_corner);
+  @apply rounded;
 }
 
 .tab {
+  @apply p-2;
   &.active {
-    color: var(--primary-dark);
+    @apply text-primary-dark;
+  }
+  &::after {
+    @apply bg-current absolute h-0 w-full origin-bottom opacity-0 transition-all duration-300;
+    content: '';
+    inset-inline-start: 0;
+    inset-block-end: 0;
   }
   &.active::after {
-    background-color: currentColor;
-    position: absolute;
-    content: "";
-    inset-block-end: 0;
-    height: 2px;
-    width: 100%;
+    @apply h-0.5 opacity-100;
   }
 }
 
 .badge {
-  --_padding: 0.125rem;
-  --_color: var(--info);
-  --_background: var(--info-neutral);
-
-  border-radius: var(--_corner);
-  -webkit-border-radius: var(--_corner);
-  -moz-border-radius: var(--_corner);
-  -ms-border-radius: var(--_corner);
-  -o-border-radius: var(--_corner);
+  @apply rounded-full w-fit;
 }

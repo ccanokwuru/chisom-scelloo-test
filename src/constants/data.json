@@ -30,7 +30,7 @@
                 "price": 599.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "unpaid",
                 "dueDate": null
             },
             {
@@ -40,7 +40,7 @@
                 "price": 1299.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "unpaid",
                 "dueDate": null
             }
         ],
@@ -78,7 +78,7 @@
                 "price": 199.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "overdue",
+                "paymentStatus": "paid",
                 "dueDate": "2023-04-30T23:59:59Z"
             }
         ],
@@ -116,7 +116,7 @@
                 "price": 299.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "overdue",
                 "dueDate": null
             },
             {
@@ -126,7 +126,7 @@
                 "price": 499.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "overdue",
                 "dueDate": null
             }
         ],
@@ -163,7 +163,7 @@
                 "price": 79.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "overdue",
                 "dueDate": null
             }
         ],
@@ -239,7 +239,7 @@
                 "price": 399.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "unpaid",
+                "paymentStatus": "overdue",
                 "dueDate": "2023-05-20T23:59:59Z"
             }
         ],
@@ -276,7 +276,7 @@
                 "price": 99.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "unpaid",
                 "dueDate": null
             }
         ],
@@ -389,7 +389,7 @@
                 "price": 39.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "overdue",
                 "dueDate": null
             }
         ],
@@ -465,7 +465,7 @@
                 "price": 29.99,
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
-                "paymentStatus": "paid",
+                "paymentStatus": "unpaid",
                 "dueDate": null
             }
         ],
