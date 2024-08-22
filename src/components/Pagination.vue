@@ -4,7 +4,7 @@ import UiDropdown from '@ui/UiDropdown.vue'
 
 const props = withDefaults(
   defineProps<{
-    totalIitems: number
+    totalItems: number
     perPage?: number
     currentPage?: number
   }>(),
