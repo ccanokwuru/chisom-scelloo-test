@@ -177,7 +177,7 @@ watch(search, (current, old) => {
       </div>
       <div class="p-3 bg-neutral">
         <Pagination
-          :totalIitems="users.length"
+          :totalItems="users.length"
           :current-page="Number(current_page)"
           :per-page="row_count"
           @change-page="changePage"
