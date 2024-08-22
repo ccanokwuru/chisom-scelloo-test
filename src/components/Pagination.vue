@@ -48,8 +48,8 @@ const totalPages = Math.ceil(props.totalItems / props.perPage)
 
     <div>
       {{ (currentPage - 1) * perPage + 1 }} -
-      {{ currentPage < totalPages ? currentPage * perPage : totalIitems }} of
-      {{ totalIitems }}
+      {{ currentPage < totalPages ? currentPage * perPage : totalItems }} of
+      {{ totalItems }}
     </div>
 
     <div class="flex gap-5 items center justify">
