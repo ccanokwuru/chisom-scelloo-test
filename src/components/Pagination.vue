@@ -48,7 +48,7 @@ const totalPages = Math.ceil(props.totalItems / props.perPage)
 
     <div>
       {{ (currentPage - 1) * perPage + 1 }} -
-      {{ currentPage < totalPages ? currentPage * perPage : totalItems }} of
+      {{ currentPage >= totalPages ? totalItems : currentPage * perPage }} of
       {{ totalItems }}
     </div>
 
