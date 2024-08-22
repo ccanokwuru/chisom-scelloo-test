@@ -128,12 +128,22 @@ const recentInv = computed(
         </div>
       </div>
       <div class="flex justify-end gap-2">
-        
         <UiDropdown position="be">
-          <template #trigger>          
+          <template #trigger>
             <MoreIcon />
           </template>
-          <div class="p-20 rounded bg-white shadow"></div>
+          <div
+            class="p-2 rounded bg-white shadow grid *:min-w-[5rem] w-max *:p-1 *:px-2 *:rounded *:whitespace-nowrap *:text-left"
+          >
+            <button type="button" class="hover:bg-neutral">Edit</button>
+            <button type="button" class="hover:bg-neutral">View Propfile</button>
+            <button type="button" class="hover:bg-positive-neutral text-positive">
+              Activate User
+            </button>
+            <button type="button" class="hover:bg-negative-neutral text-negative">
+              Delete User
+            </button>
+          </div>
         </UiDropdown>
       </div>
     </div>

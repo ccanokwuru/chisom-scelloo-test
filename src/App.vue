@@ -40,10 +40,11 @@ const filter = computed(() => useUserDataStore().filter)
 const selected_users = ref<User['userId'][]>([])
 const all_users_selected = ref(false)
 
-const changeTab = (t?: UserInventory['paymentStatus'] | 'all') => {
-  active_tab.value = t
+const changeTab = (t?: string) => {
+  const f = t as UserInventory['paymentStatus'] | 'all' | undefined
+  active_tab.value = f
   router.push({ ...route.value, query: { ...route.value.query, tab: t } })
-  filterUsers(t)
+  filterUsers(f)
   reset()
 }
 const changepage = (p?: string | number) => {
@@ -171,7 +172,9 @@ watch(search, (current, old) => {
           class="hover:bg-neutral"
         />
       </div>
-      <Pagination class="bg-neutral py-3" :total_pages="20" />
+      <div class="p-3 bg-neutral">
+        <Pagination :totalIitems="127" />
+      </div>
     </main>
     <footer></footer>
   </div>
