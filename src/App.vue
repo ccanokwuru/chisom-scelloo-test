@@ -174,6 +174,9 @@ watch(search, (current, old) => {
           :user="user"
           class="hover:bg-neutral"
         />
+        <div class="data" v-if="!users.length">
+          <div class="col-span-6 p-5 uppercase text-center">No Record Found</div>
+        </div>
       </div>
       <div class="p-3 bg-neutral">
         <Pagination
