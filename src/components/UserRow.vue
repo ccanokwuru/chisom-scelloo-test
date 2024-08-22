@@ -120,7 +120,7 @@ const recentInv = computed(
             </span>
           </small>
         </div>
-        <div class="text-right">
+        <div class="text-right !gap-0">
           <span> {{ recentInv?.currencySymbol ?? '' }} {{ recentInv?.price ?? '' }} </span>
           <small>
             {{ recentInv?.currencyIsoCode ?? '' }}

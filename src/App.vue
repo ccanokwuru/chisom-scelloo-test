@@ -24,9 +24,18 @@ const page = computed(() => route.value.query?.page?.toString())
 const table = ref<HTMLDivElement>()
 
 const active_tab = ref<string | undefined>(tab.value ?? tabs[0].name)
-const active_page = ref<string | undefined>(page.value ?? 1)
-const { filterUsers, searchUser, sortUsers } = useUserDataStore()
+const active_page = ref<string | number | undefined>(page.value ?? 1)
+const {
+  filterUsers,
+  filterUsersByStatus,
+  searchUser,
+  sortUsersByDate,
+  sortUsersByName,
+  all_users,
+  makePaid
+} = useUserDataStore()
 const users = computed(() => useUserDataStore().users)
+const filter = computed(() => useUserDataStore().filter)
 
 const selected_users = ref<User['userId'][]>([])
 const all_users_selected = ref(false)
@@ -37,13 +46,13 @@ const changeTab = (t?: UserInventory['paymentStatus'] | 'all') => {
   filterUsers(t)
   reset()
 }
-const changepage = (p?: string|number) => {
+const changepage = (p?: string | number) => {
   active_page.value = p
   router.push({ ...route.value, query: { ...route.value.query, page: p } })
   reset()
 }
 
-const reset =()=>{  
+const reset = () => {
   window.scrollTo({
     top: 0,
     left: 0,
@@ -68,6 +77,15 @@ const selectAllUser = () => {
   selected_users.value = !all_users_selected.value ? users.value.map(({ userId }) => userId) : []
   all_users_selected.value = !all_users_selected.value
 }
+const total_payable = computed(() => {
+  let inventory: UserInventory[] = []
+  all_users.forEach((user) => {
+    inventory = [...inventory, ...user.inventory]
+  })
+  return inventory
+    .map(({ price, paymentStatus }) => (paymentStatus !== 'paid' ? price : 0))
+    .reduce((a, b) => a + b)
+})
 
 const search = ref<string>()
 watch(search, (current, old) => {
@@ -86,15 +104,32 @@ watch(search, (current, old) => {
         <div>
           Total payable amount:
           <span class="text-lg font-light"
-            ><span class="text-primary font-semibold">$900.00</span> USD</span
+            ><span class="text-primary font-semibold">{{
+              new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(
+                total_payable
+              )
+            }}</span>
+            USD</span
           >
         </div>
       </div>
     </header>
     <main>
       <!-- head & search -->
-      <div class="flex gap-2 gap-x-5 flex-wrap p-3 items-center z-20">
-        <Filter class="border rounded p-1.5 px-3 h-full" @change="filterUsers" />
+      <div class="flex gap-2 gap-x-5 flex-wrap p-3 items-center z-20 sticky top-0">
+        <Filter
+          class="border rounded p-1.5 px-3 h-full"
+          :filter="filter.status"
+          @changeSort="
+            (e) =>
+              e && e !== 'all'
+                ? e === 'firstName' || e === 'lastName'
+                  ? sortUsersByName(e)
+                  : sortUsersByDate(e)
+                : filterUsers(filter.payment)
+          "
+          @changeFilter="filterUsersByStatus"
+        />
         <div class="grow">
           <div class="flex max-w-[30rem] rounded-lg gap-2 p-2 px-3 items-center bg-neutral">
             <SearchIcon class="min-w-5 aspect-square" />
@@ -106,7 +141,16 @@ watch(search, (current, old) => {
             />
           </div>
         </div>
-        <button class="btn bg-primary p-2 px-3 uppercase text-white" style="---btn-padding: 0.5rem">
+        <button
+          class="btn bg-primary p-2 px-3 uppercase text-white"
+          @click="
+            () => {
+              selected_users.forEach((userId) => makePaid(userId))
+              all_users_selected = false
+              selected_users = []
+            }
+          "
+        >
           Pay Dues
         </button>
       </div>
@@ -193,8 +237,8 @@ watch(search, (current, old) => {
     [checkbox-end name-start] minmax(15rem, 1fr)
     [name-end status-start] minmax(10rem, 1fr)
     [status-end payment-start] minmax(10rem, 1fr)
-    [payment-end amount-start] minmax(5rem, 1fr)
-    [amount-end more-start] minmax(5rem, 1fr)
+    [payment-end amount-start] minmax(5rem, 100px)
+    [amount-end more-start] auto
     [more-end row-end];
 
   & > * {

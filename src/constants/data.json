@@ -31,7 +31,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "unpaid",
-                "dueDate": null
+                "dueDate": "2023-04-30T23:59:59Z"
             },
             {
                 "itemId": "item002",
@@ -41,7 +41,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "unpaid",
-                "dueDate": null
+                "dueDate": "2023-04-30T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-01T11:15:00Z"
@@ -117,7 +117,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "overdue",
-                "dueDate": null
+                "dueDate": "2023-05-01T23:59:59Z"
             },
             {
                 "itemId": "item005",
@@ -127,7 +127,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "overdue",
-                "dueDate": null
+                "dueDate": "2023-05-01T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-02T09:30:00Z"
@@ -164,7 +164,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "overdue",
-                "dueDate": null
+                "dueDate": "2023-05-02T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-03T11:15:00Z"
@@ -202,7 +202,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "paid",
-                "dueDate": null
+                "dueDate": "2023-05-03T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-04T14:00:00Z"
@@ -277,7 +277,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "unpaid",
-                "dueDate": null
+                "dueDate": "2023-05-05T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-06T10:30:00Z"
@@ -315,7 +315,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "paid",
-                "dueDate": null
+                "dueDate": "2023-05-06T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-07T14:30:00Z"
@@ -390,7 +390,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "overdue",
-                "dueDate": null
+                "dueDate": "2023-05-08T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-09T16:15:00Z"
@@ -428,7 +428,7 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "paid",
-                "dueDate": null
+                "dueDate": "2023-05-09T23:59:59Z"
             }
         ],
         "lastSeen": "2023-05-10T11:00:00Z"
@@ -466,9 +466,9 @@
                 "currencySymbol": "$",
                 "currencyIsoCode": "USD",
                 "paymentStatus": "unpaid",
-                "dueDate": null
+                "dueDate": "2023-05-10T23:59:59Z"
             }
         ],
-        "lastSeen": "2023-05-11T14:00:00Z"
+        "lastSeen": "2023-05-10T11:00:00Z"
     }
 ]
