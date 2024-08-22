@@ -20,7 +20,8 @@ const emits = defineEmits<{
 }>()
 
 const counts = [5, 10, 25, 50, 100]
-const lastPage = props.currentPage * props.perPage >= props.totalIitems
+const totalPages = Math.ceil(props.totalItems / props.perPage)
+
 </script>
 <template>
   <div class="pagination gap-5">
@@ -47,7 +48,7 @@ const lastPage = props.currentPage * props.perPage >= props.totalIitems
 
     <div>
       {{ (currentPage - 1) * perPage + 1 }} -
-      {{ !lastPage ? currentPage * perPage : totalIitems }} of
+      {{ currentPage < totalPages ? currentPage * perPage : totalIitems }} of
       {{ totalIitems }}
     </div>
 
@@ -62,7 +63,7 @@ const lastPage = props.currentPage * props.perPage >= props.totalIitems
       <button
         type="button"
         class="p-1 rounded ouline none border-none"
-        @click="emits('changePage', !lastPage ? currentPage + 1 : currentPage)"
+        @click="emits('changePage', currentPage < totalPages ? currentPage + 1 : totalPages)"
       >
         &rang;
       </button>
